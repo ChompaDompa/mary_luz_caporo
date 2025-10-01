@@ -3,39 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Caporo Cabaña - Capurganá</title>
-  <meta name="description" content="Hotel frente al mar. Reserva habitaciones, tours y eventos con vistas al océano." />
-
-  <!-- Fuente + Bootstrap + Icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link rel="stylesheet" href="estilos/index.css">    
-  
+  <title>Caporo Caba&ntilde;a | Capurgan&aacute;</title>
+  <meta name="description" content="Caporo Caba&ntilde;a en Capurgan&aacute;. Descubre alojamiento frente al mar, tours y recuerdos artesanales." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body class="bg-white">
-  <!-- NAV -->
   <nav class="navbar navbar-expand-lg bg-white sticky-top border-bottom">
     <div class="container py-2">
-      <a class="navbar-brand" href="#">Caporo Cabaña</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+      <a class="navbar-brand" href="index.html">Caporo Caba&ntilde;a</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Abrir men&uacute;">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="nav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="#planes">Planes</a></li>
-          <li class="nav-item"><a class="nav-link" href="#reservas">Reservas</a></li>
-          <li class="nav-item"><a class="nav-link" href="#tours">Tours</a></li>
-          <li class="nav-item"><a class="nav-link" href="#souvenirs">Souvenirs</a></li>
-          <li class="nav-item"><a class="nav-link" href="#eventos">Eventos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#galeria">Galer&#237;a</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="alojamiento.html">Alojamiento</a></li>
+          <li class="nav-item"><a class="nav-link" href="experiencias.html">Experiencias</a></li>
+          <li class="nav-item"><a class="nav-link" href="souvenirs.html">Souvenirs</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
         </ul>
         <div class="d-flex ms-lg-3 gap-2">
-          <a href="#reservas" class="btn btn-primary">Reservar</a>
+          <a href="alojamiento.html#reservas" class="btn btn-primary">Reservar</a>
           <button type="button" class="btn btn-outline-primary position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
             <i class="bi bi-bag"></i><span class="ms-2 d-none d-lg-inline">Carrito</span>
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary" id="cart-count">0</span>
@@ -45,420 +38,171 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <header id="inicio" class="hero">
     <div class="content container">
-      <h1 class="mb-3">CAPORO CABAÑA</h1>
-      <h2 class="mb-3">CAPURGANÁ</h2>
-      <p class="lead mb-4">Una experiencia entre el cielo y el mar.</p>
+      <h1 class="mb-3">Caporo Caba&ntilde;a</h1>
+      <h2 class="mb-3">Capurgan&aacute;, Colombia</h2>
+      <p class="lead mb-4">Escapa al rinc&oacute;n donde la selva abraza al Caribe. Vive Caporo a tu ritmo.</p>
       <div class="d-flex gap-2 justify-content-center">
-        <a href="#reservas" class="btn btn-primary btn-lg"><i class="bi bi-calendar-week me-2"></i>Reservar</a>
-        <a href="#galeria" class="btn btn-outline-light btn-lg"><i class="bi bi-images me-2"></i>Ver Galería</a>
+        <a href="alojamiento.html#reservas" class="btn btn-primary btn-lg"><i class="bi bi-calendar-week me-2"></i>Reservar estad&iacute;a</a>
+        <a href="experiencias.html#tours" class="btn btn-outline-light btn-lg"><i class="bi bi-compass me-2"></i>Explorar experiencias</a>
       </div>
     </div>
   </header>
 
-  <!-- INTRO / BENEFICIOS -->
-  <section class="py-5 bg-white">
-    <div class="container">
-      <div class="row align-items-center g-5">
-        <div class="col-lg-6">
-          <h2 class="section-title">Paraíso entre la selva y el mar</h2>
-          <p class="section-sub mt-3">Caporo en Capurganá es un lugar que une el encanto del Caribe con la tranquilidad de la selva. Su ubicación privilegiada, rodeada de playas y naturaleza, lo convierte en un destino ideal para desconectarse y disfrutar de un ambiente único.</p>
-          <p class="section-sub">Aquí encontrarás experiencias auténticas, desde la gastronomía local hasta la calidez de la comunidad. Cada rincón refleja la esencia de Capurganá y ofrece la oportunidad de descubrir paisajes inolvidables.</p>
-          <p class="section-sub">Ya sea para descansar, explorar senderos o vivir aventuras en el mar, Caporo es el punto de partida perfecto. Un espacio donde la naturaleza y la calma se unen para regalarte momentos especiales.</p>
-
-          <div class="d-flex flex-wrap gap-2 mt-4">
-            <span class="feature-pill">☁️ Tranquilidad</span>
-            <span class="feature-pill">☁️ Naturaleza</span>
-            <span class="feature-pill">☁️ Aventura</span>
-            <span class="feature-pill">☁️ Playas</span>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <img class="w-100 rounded-2xl shadow" src="imagenes/Seccion2_Descripcion/Cabania.jpg" alt="Vista al mar" />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NUESTROS HUÉSPEDES -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h3 class="mb-4 section-title">Nuestros Huéspedes</h3>
-      <div class="row g-4">
-        <div class="col-6 col-md-3">
-          <div class="p-4 bg-white rounded-2xl h-100 border text-center">
-            <img class="avatar mb-3" src="imagenes/Seccion3_Huespedes/betty.jpg" alt="Sofía Luna" />
-            <h6 class="mb-0">Betty Pizón</h6>
-            <div class="text-muted small">Economista</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="p-4 bg-white rounded-2xl h-100 border text-center">
-            <img class="avatar mb-3" src="imagenes/Seccion3_Huespedes/pedro.jpg" alt="Mateo Sol" />
-            <h6 class="mb-0">Pedro CoraL</h6>
-            <div class="text-muted small">Bailarín, galán</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="p-4 bg-white rounded-2xl h-100 border text-center">
-            <img class="avatar mb-3" src="imagenes/Seccion3_Huespedes/patty.jpg" alt="Valeria Mar" />
-            <h6 class="mb-0">Paty</h6>
-            <div class="text-muted small">Entrenadora</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-3">
-          <div class="p-4 bg-white rounded-2xl h-100 border text-center">
-            <img class="avatar mb-3" src="imagenes/Seccion3_Huespedes/armando.jpeg" alt="Leo Mar" />
-            <h6 class="mb-0">Armando Mendoza</h6>
-            <div class="text-muted small">Presidente de Ecomoda</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PLANES / PRECIOS -->
-  <section id="planes" class="py-5 bg-white">
-    <div class="container">
-      <h3 class="section-title mb-1">Planes</h3>
-      <div class="row g-4 mt-1">
-        <div class="col-md-6 col-lg-3">
-          <div class="price-card p-4 h-100">
-            <h5>🌿 Estándar Jardín</h5>
-            <div class="price">$70.000 <small class="fs-6 fw-semibold text-muted">/ Noche</small></div>
-            <p class="text-muted">Habitación sencilla con vista a la naturaleza y al jardín.</p>
-            <a href="#reservas" class="btn btn-primary w-100">Seleccionar Plan</a>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="price-card p-4 h-100">
-            <h5>🌊 Superior Vista Mar</h5>
-            <div class="price">$120.000 <small class="fs-6 fw-semibold text-muted">/ Noche</small></div>
-            <p class="text-muted">Habitación con balcón y vista parcial al lago/paisaje natural.</p>
-            <a href="#reservas" class="btn btn-primary w-100">Seleccionar Plan</a>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="price-card p-4 h-100">
-            <h5>🏖️ Suite Playa</h5>
-            <div class="price">$160.000 <small class="fs-6 fw-semibold text-muted">/ Noche</small></div>
-            <p class="text-muted">Suite con acceso al río o zona privada frente al agua.</p>
-            <a href="#reservas" class="btn btn-primary w-100">Seleccionar Plan</a>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <div class="price-card p-4 h-100">
-            <h5>🏡 Villa Caporo</h5>
-            <div class="price">$250.000 <small class="fs-6 fw-semibold text-muted">/ Noche</small></div>
-            <p class="text-muted">Villa privada con jacuzzi, servicio especial y naturaleza.</p>
-            <a href="#reservas" class="btn btn-primary w-100">Seleccionar Plan</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA RESERVA -->
-  <section id="reservas" class="py-5 bg-light">
-    <div class="container">
-      <div class="row g-4 align-items-start">
-        <div class="col-lg-6">
-          <h2 class="section-title mb-3">Reserva tu estad&#237;a</h2>
-          <p class="section-sub">Selecciona las fechas y el tipo de habitaci&#243;n para generar una confirmaci&#243;n inmediata.</p>
-          <ul class="list-unstyled text-muted small">
-            <li class="mb-2"><i class="bi bi-check-circle me-2 text-primary"></i>Datos almacenados de forma local (simulaci&#243;n).</li>
-            <li class="mb-2"><i class="bi bi-check-circle me-2 text-primary"></i>Confirmaci&#243;n autom&#225;tica con c&#243;digo de reserva.</li>
-            <li><i class="bi bi-check-circle me-2 text-primary"></i>Actualiza o elimina reservas desde el historial.</li>
-          </ul>
-          <div class="mt-4">
-            <h6 class="fw-semibold">Reservas recientes</h6>
-            <div class="bg-white border rounded-3 p-3 small" id="reservation-history">A&#250;n no hay reservas.</div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <div class="bg-white rounded-3 shadow p-4">
-            <form id="reservation-form" class="row g-3" novalidate>
-              <div class="col-12">
-                <label class="form-label" for="roomType">Tipo de habitaci&#243;n</label>
-                <select id="roomType" class="form-select" required></select>
-                <div class="invalid-feedback">Por favor selecciona una opci&#243;n.</div>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="checkIn">Fecha de ingreso</label>
-                <input type="date" id="checkIn" class="form-control" required>
-                <div class="invalid-feedback">Ingresa la fecha de ingreso.</div>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="checkOut">Fecha de salida</label>
-                <input type="date" id="checkOut" class="form-control" required>
-                <div class="invalid-feedback">Ingresa la fecha de salida.</div>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="guests">Huespedes</label>
-                <input type="number" id="guests" class="form-control" min="1" max="6" value="2" required>
-                <div class="invalid-feedback">Indica el n&#250;mero de huespedes.</div>
-              </div>
-              <div class="col-md-6">
-                <label class="form-label" for="extras">Extras</label>
-                <select id="extras" class="form-select">
-                  <option value="none" selected>Sin extras</option>
-                  <option value="airport">Transporte aeropuerto</option>
-                  <option value="spa">Acceso spa</option>
-                  <option value="breakfast">Desayuno premium</option>
-                </select>
-              </div>
-              <div class="col-12">
-                <div id="reservation-summary" class="bg-light rounded-3 border p-3 d-none"></div>
-              </div>
-              <div class="col-12 d-grid">
-                <button type="submit" class="btn btn-primary btn-lg">Confirmar reserva simulada</button>
-              </div>
-              <div class="col-12">
-                <div id="reservation-success" class="alert alert-success d-none mb-0" role="alert"></div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TOURS -->
-  <section id="tours" class="py-5 bg-white">
-    <div class="container">
-      <h3 class="section-title mb-3">Tours y experiencias</h3>
-      <p class="section-sub">Agrega actividades inolvidables a tu paquete de viaje.</p>
-      <div class="row g-4" id="tour-list"></div>
-    </div>
-  </section>
-
-  <!-- SOUVENIRS -->
-  <section id="souvenirs" class="py-5 bg-light">
-    <div class="container">
-      <h3 class="section-title mb-3">Souvenirs y detalles</h3>
-      <p class="section-sub">Lleva un recuerdo de Caporo sin salir de la web.</p>
-      <div class="row g-4" id="souvenir-list"></div>
-    </div>
-  </section>
-  <!-- EVENTOS -->
-  <section id="eventos" class="py-5 bg-white">
-    <div class="container">
-      <h3 class="section-title mb-4">Eventos</h3>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-3">
-          <article class="card h-100 border rounded-2xl overflow-hidden">
-            <img class="card-img-top" src="imagenes/Seccion4_Eventos/oferta_verano.jpeg" alt="Oferta Verano">
-            <div class="card-body">
-              <h5 class="card-title mb-1">Oferta Verano</h5>
-              <div class="text-muted small">2025-08-25</div>
-              <p class="card-text mt-2">Disfruta de nuestro paquete de verano con un 20% de descuento en todas las reservas.</p>
-              <a class="stretched-link" href="#">Más</a>
+  <main>
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h2 class="section-title">Para&iacute;so entre la selva y el mar</h2>
+            <p class="section-sub mt-3">Caporo en Capurgan&aacute; une el encanto del Caribe con la tranquilidad de la selva. Su ubicaci&oacute;n privilegiada, rodeada de playas y naturaleza, lo convierte en un destino ideal para desconectarse.</p>
+            <p class="section-sub">Aqu&iacute; encuentras experiencias aut&eacute;nticas, desde gastronom&iacute;a local hasta la calidez de la comunidad. Cada rinc&oacute;n refleja la esencia de Capurgan&aacute; y ofrece paisajes inolvidables.</p>
+            <p class="section-sub mb-4">Descansa, explora senderos o vive aventuras en el mar. Caporo es el punto de partida perfecto para tus pr&oacute;ximas vacaciones.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <span class="feature-pill">&#127807; Tranquilidad</span>
+              <span class="feature-pill">&#127796; Naturaleza</span>
+              <span class="feature-pill">&#127758; Aventura</span>
+              <span class="feature-pill">&#127754; Playas</span>
             </div>
-          </article>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <article class="card h-100 border rounded-2xl overflow-hidden">
-            <img class="card-img-top" src="imagenes/Seccion4_Eventos/tour_isla.jpeg" alt="Tour Isla">
-            <div class="card-body">
-              <h5 class="card-title mb-1">Tour Isla</h5>
-              <div class="text-muted small">2025-09-15</div>
-              <p class="card-text mt-2">Aventura en la isla: tour de snorkel y visita a ruinas mayas.</p>
-              <a class="stretched-link" href="#">Más</a>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <article class="card h-100 border rounded-2xl overflow-hidden">
-            <img class="card-img-top" src="imagenes/Seccion4_Eventos/noche_Casino.jpg" alt="Noche Casino">
-            <div class="card-body">
-              <h5 class="card-title mb-1">Noche Casino</h5>
-              <div class="text-muted small">2025-10-01</div>
-              <p class="card-text mt-2">Noche de casino y cócteles tropicales con música en vivo.</p>
-              <a class="stretched-link" href="#">Más</a>
-            </div>
-          </article>
-        </div>
-        <div class="col-md-6 col-lg-3">
-          <article class="card h-100 border rounded-2xl overflow-hidden">
-            <img class="card-img-top" src="imagenes/Seccion4_Eventos/paquete_parejas.jpg" alt="Paquete Parejas">
-            <div class="card-body">
-              <h5 class="card-title mb-1">Paquete Parejas</h5>
-              <div class="text-muted small">2025-11-10</div>
-              <p class="card-text mt-2">Paquete romántico para parejas con cena privada en la playa.</p>
-              <a class="stretched-link" href="#">Más</a>
-            </div>
-          </article>
+          </div>
+          <div class="col-lg-6">
+            <img class="w-100 rounded-2xl shadow" src="img/Seccion2_Descripcion/Cabania.jpg" alt="Caba&ntilde;a frente al mar" />
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- GALERÍA -->
-  <section id="galeria" class="py-5 bg-light">
-    <div class="container">
-      <h3 class="section-title mb-4">Galería Paradisíaca</h3>
-      <div class="row g-3 gallery">
-        <div class="col-6 col-md-3"><img src="imagenes/Seccion5_Galeria/1.png" alt="galeria 1"></div>
-        <div class="col-6 col-md-3"><img src="imagenes/Seccion5_Galeria/2.jpg" alt="galeria 2"></div>
-        <div class="col-6 col-md-3"><img src="imagenes/Seccion5_Galeria/3.jpg" alt="galeria 3"></div>
-        <div class="col-6 col-md-3"><img src="imagenes/Seccion5_Galeria/4.jpg" alt="galeria 4"></div>
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h3 class="section-title mb-2">Explora Caporo</h3>
+          <p class="section-sub mx-auto">Planifica cada detalle de tu viaje: hosp&eacute;date frente al mar, vive experiencias guiadas y elige un recuerdo artesanal para llevar a casa.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-3">
+            <article class="p-4 bg-white rounded-2xl border h-100 d-flex flex-column">
+              <div class="mb-3 text-primary fs-2"><i class="bi bi-house-heart"></i></div>
+              <h5 class="fw-semibold">Alojamiento</h5>
+              <p class="text-muted flex-grow-1">Habitaciones, planes y reservas con confirmaci&oacute;n inmediata.</p>
+              <a class="btn btn-outline-primary mt-3" href="alojamiento.html">Ver habitaciones</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="p-4 bg-white rounded-2xl border h-100 d-flex flex-column">
+              <div class="mb-3 text-primary fs-2"><i class="bi bi-sunrise"></i></div>
+              <h5 class="fw-semibold">Experiencias</h5>
+              <p class="text-muted flex-grow-1">Tours guiados, eventos especiales y galer&iacute;as para inspirarte.</p>
+              <a class="btn btn-outline-primary mt-3" href="experiencias.html">Descubrir tours</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="p-4 bg-white rounded-2xl border h-100 d-flex flex-column">
+              <div class="mb-3 text-primary fs-2"><i class="bi bi-gift"></i></div>
+              <h5 class="fw-semibold">Souvenirs</h5>
+              <p class="text-muted flex-grow-1">Artesan&iacute;as locales y detalles hechos a mano para recordar tu viaje.</p>
+              <a class="btn btn-outline-primary mt-3" href="souvenirs.html">Elegir recuerdos</a>
+            </article>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <article class="p-4 bg-white rounded-2xl border h-100 d-flex flex-column">
+              <div class="mb-3 text-primary fs-2"><i class="bi bi-geo-alt"></i></div>
+              <h5 class="fw-semibold">Contacto</h5>
+              <p class="text-muted flex-grow-1">Coordina tu transporte, resuelve dudas y recibe asistencia 24/7.</p>
+              <a class="btn btn-outline-primary mt-3" href="contacto.html">Hablar con nosotros</a>
+            </article>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SOCIOS + TESTIMONIOS + STATS -->
-  <section class="py-3 bg-white">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-6">
-            <div class="p-4 rounded-2xl border h-100 bg-light text-center">
-                <p class="mb-1">“¡Una experiencia inolvidable! Las vistas al mar y la atención del personal fueron excepcionales.”</p>
-                <div class="d-flex flex-column align-items-center mt-3">
-                <img class="avatar mb-2" src="imagenes/Seccion6_Testimonios/aurelio.jpeg" alt="Aurelio Cheveroni">
-                <div>
-                    <div class="fw-semibold">Aurelio Cheveroni</div>
-                    <div class="text-muted small">Humorista</div>
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="p-4 rounded-2xl border h-100 bg-light">
+              <h6 class="text-primary text-uppercase fw-semibold small">Experiencias guiadas</h6>
+              <h4 class="mt-2">Tours pensados para cada viajero</h4>
+              <p class="text-muted">Islas de coral, caminatas por la selva y rutas gastron&oacute;micas que puedes combinar con tu hospedaje.</p>
+              <a class="fw-semibold" href="experiencias.html#tours">Ver agenda <i class="bi bi-arrow-up-right ms-1"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 rounded-2xl border h-100 bg-light">
+              <h6 class="text-primary text-uppercase fw-semibold small">Calidez y confort</h6>
+              <h4 class="mt-2">Planes para escapadas y celebraciones</h4>
+              <p class="text-muted">Desde la habitaci&oacute;n Est&aacute;ndar Jard&iacute;n hasta la Villa Caporo con jacuzzi privado y servicio exclusivo.</p>
+              <a class="fw-semibold" href="alojamiento.html#planes">Conocer planes <i class="bi bi-arrow-up-right ms-1"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 rounded-2xl border h-100 bg-light">
+              <h6 class="text-primary text-uppercase fw-semibold small">Detalles locales</h6>
+              <h4 class="mt-2">Souvenirs hechos a mano</h4>
+              <p class="text-muted">Hamacas, caf&eacute; de origen y kits de bienestar elaborados por artesanos de Capurgan&aacute;.</p>
+              <a class="fw-semibold" href="souvenirs.html">Ver cat&aacute;logo <i class="bi bi-arrow-up-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <h3 class="section-title mb-3">Historias que inspiran</h3>
+            <p class="section-sub">"Una experiencia inolvidable. Las vistas al mar y la atenci&oacute;n del personal fueron excepcionales."</p>
+            <p class="section-sub">"El hotel es un para&iacute;so. Disfrut&eacute; mucho de los tours y la comida es deliciosa."</p>
+            <a class="btn btn-outline-primary mt-3" href="alojamiento.html#planes">Leer testimonios completos</a>
+          </div>
+          <div class="col-lg-6">
+            <div class="row text-center g-4">
+              <div class="col-4">
+                <div class="stat">
+                  <div class="num">1500+</div>
+                  <div class="label">Visitantes felices</div>
                 </div>
+              </div>
+              <div class="col-4">
+                <div class="stat">
+                  <div class="num">800+</div>
+                  <div class="label">Reservas</div>
                 </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="p-4 rounded-2xl border h-100 bg-light text-center">
-                <p class="mb-1">“El hotel es un paraíso. Disfruté mucho de los tours y la comida es de lo más delicioso.”</p>
-                <div class="d-flex flex-column align-items-center mt-3">
-                <img class="avatar mb-2" src="imagenes/Seccion6_Testimonios/rasta.jpeg" alt="Aurelio Cheveroni">
-                <div>
-                    <div class="fw-semibold">Rastacuando</div>
-                    <div class="text-muted small">Humorista</div>
+              </div>
+              <div class="col-4">
+                <div class="stat">
+                  <div class="num">1200+</div>
+                  <div class="label">Tours guiados</div>
                 </div>
-                </div>
+              </div>
             </div>
-        </div>
-      </div>
-
-      <div class="row text-center mt-5">
-        <div class="col-4 stat">
-          <div class="num">1500+</div>
-          <div class="label">Visitantes Felices</div>
-        </div>
-        <div class="col-4 stat">
-          <div class="num">800+</div>
-          <div class="label">Reservas Exitosas</div>
-        </div>
-        <div class="col-4 stat">
-          <div class="num">1200+</div>
-          <div class="label">Tours Vendidos</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h3 class="section-title mb-4">Preguntas Frecuentes</h3>
-      <div class="accordion" id="faq">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q1">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1">¿Ofrecen Wi‑Fi gratuito?</button>
-          </h2>
-          <div id="a1" class="accordion-collapse collapse show" data-bs-parent="#faq">
-            <div class="accordion-body">Sí, ofrecemos Wi‑Fi gratuito en todas las áreas del hotel para que te mantengas conectado durante tu estancia.</div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q2">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">¿Qué métodos de pago aceptan?</button>
-          </h2>
-          <div id="a2" class="accordion-collapse collapse" data-bs-parent="#faq">
-            <div class="accordion-body">Aceptamos todas las principales tarjetas de crédito y débito, así como pagos en efectivo.</div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q3">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">¿El servicio de habitaciones está disponible?</button>
-          </h2>
-          <div id="a3" class="accordion-collapse collapse" data-bs-parent="#faq">
-            <div class="accordion-body">Sí, contamos con servicio de habitaciones las 24 horas para tu comodidad.</div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q4">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4">¿Qué servicios incluyen las habitaciones?</button>
-          </h2>
-          <div id="a4" class="accordion-collapse collapse" data-bs-parent="#faq">
-            <div class="accordion-body">Nuestras habitaciones están equipadas con aire acondicionado, minibar, TV de pantalla plana y baño privado con artículos de aseo gratuitos.</div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q5">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a5">¿Se puede cancelar la reserva?</button>
-          </h2>
-          <div id="a5" class="accordion-collapse collapse" data-bs-parent="#faq">
-            <div class="accordion-body">Sí, puedes cancelar tu reserva hasta 48 horas antes de la fecha de llegada sin ningún cargo.</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACTO -->
-  <section id="contacto" class="py-5 bg-white">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-lg-6">
-          <h3 class="section-title mb-3">Síguenos</h3>
-          <div class="d-flex gap-3 mb-4">
-            <a class="btn btn-outline-dark" target="_blank" href="https://www.instagram.com/caporocapurgana/?igshid=ZmZhODViOGI%3D"><i class="bi bi-instagram"></i></a>
-            <a class="btn btn-outline-dark" target="_blank" href="https://www.facebook.com/CaporoCapurgana/?ref=_xav_ig_profile_page_web#"><i class="bi bi-facebook"></i></a>
-            <a class="btn btn-outline-dark" target="_blank" href="https://wa.me/+573228136752"><i class="bi bi-whatsapp"></i></a>
+    <section class="py-5 bg-white">
+      <div class="container">
+        <div class="rounded-2xl bg-light border p-4 p-lg-5 text-center">
+          <h3 class="section-title mb-3">Listo para planear tu pr&oacute;xima visita</h3>
+          <p class="section-sub mx-auto">Reserva en l&iacute;nea, agrega tours y coordina detalles con nuestro equipo. En Caporo todo gira alrededor de tu experiencia.</p>
+          <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-4">
+            <a class="btn btn-primary btn-lg" href="alojamiento.html#reservas"><i class="bi bi-calendar-check me-2"></i>Reservar ahora</a>
+            <a class="btn btn-outline-primary btn-lg" href="contacto.html"><i class="bi bi-chat-text me-2"></i>Solicitar informaci&oacute;n</a>
           </div>
-
-          <h3 class="section-title mb-3">Contacta con Nosotros</h3>
-          <form class="row gy-3">
-            <div class="col-md-6">
-              <label class="form-label">Nombre</label>
-              <input class="form-control" type="text" placeholder="Tu nombre" required>
-            </div>
-            <div class="col-md-6">
-              <label class="form-label">Email</label>
-              <input class="form-control" type="email" placeholder="nombre@ejemplo.com" required>
-            </div>
-            <div class="col-12">
-              <label class="form-label">Mensaje</label>
-              <textarea class="form-control" rows="4" placeholder="Cuéntanos cómo podemos ayudarte" required></textarea>
-            </div>
-            <div class="col-12">
-              <button class="btn btn-primary" type="submit">Enviar Mensaje</button>
-            </div>
-          </form>
-        </div>
-
-        <div class="col-lg-6">
-          <h5 class="mb-3">Información de Contacto</h5>
-          <ul class="list-unstyled">
-            <li><i class="bi bi-telephone me-2"></i>Teléfono: +57 311 393 0000</li>
-            <li><i class="bi bi-whatsapp me-2"></i>WhatsApp: +52 311 393 0000</li>
-            <li><i class="bi bi-envelope me-2"></i>Email: mary_luz_caporo@yopmail.com</li>
-            <li><i class="bi bi-geo-alt me-2"></i>Ubicación: Capurganá</li>
-            <li><i class="bi bi-clock me-2"></i>Horario: Abierto 24 horas, 7 días a la semana</li>
-          </ul>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
   <footer class="footer py-4">
     <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
-      <div>Todos los derechos reservados ©</div>
-      <div class="small">Hecho con ❤️ desde mi casa</div>
+      <div>Todos los derechos reservados &copy;</div>
+      <div class="small">Hecho con amor desde mi casa</div>
     </div>
   </footer>
 
-  <!-- Modals -->
   <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-scrollable">
       <div class="modal-content">
@@ -467,7 +211,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
         </div>
         <div class="modal-body">
-          <div id="cart-alert" class="alert alert-info d-none" role="alert">Tu carrito est&#225; vac&#237;o. Agrega tours o souvenirs para continuar.</div>
+          <div id="cart-alert" class="alert alert-info d-none" role="alert">Tu carrito est&aacute; vac&iacute;o. Agrega tours o souvenirs para continuar.</div>
           <div id="cart-success" class="alert alert-success d-none" role="alert"></div>
           <div id="cart-items" class="list-group mb-3"></div>
           <div class="d-flex justify-content-between align-items-center">
@@ -483,7 +227,6 @@
     </div>
   </div>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="scripts/app.js"></script>
 </body>

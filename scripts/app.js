@@ -119,54 +119,71 @@
       checkoutButton: document.getElementById("checkoutButton")
     };
 
-    if (!ui.reservationForm || !ui.roomSelect || !ui.tourContainer || !ui.souvenirContainer) {
+    const hasReservations = !!(ui.reservationForm && ui.roomSelect);
+    const hasTours = !!ui.tourContainer;
+    const hasSouvenirs = !!ui.souvenirContainer;
+    const hasCart = !!(ui.cartCount && ui.cartItems && ui.cartAlert && ui.cartTotal && ui.checkoutButton);
+
+    if (!hasReservations && !hasTours && !hasSouvenirs && !hasCart) {
       return;
     }
 
-    renderRoomOptions(ui.roomSelect);
-    renderCollection(DATA.tours, ui.tourContainer, "tours");
-    renderCollection(DATA.souvenirs, ui.souvenirContainer, "souvenirs");
-    updateReservationHistory(ui.historyBox);
-    updateCartUI(ui);
-
-    [ui.roomSelect, ui.checkInInput, ui.checkOutInput, ui.guestsInput, ui.extrasSelect].forEach((field) => {
-      if (!field) return;
-      field.addEventListener("input", () => updateReservationSummary(ui));
-      field.addEventListener("change", () => updateReservationSummary(ui));
-    });
-
-    ui.reservationForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      ui.reservationForm.classList.add("was-validated");
-
-      const result = buildReservationPayload(ui);
-      if (!result.valid) {
-        if (result.message) {
-          showSummary(ui.summaryBox, result.message, false);
-        }
-        return;
-      }
-
-      state.reservations.unshift(result.reservation);
-      saveReservations();
+    if (hasReservations) {
+      renderRoomOptions(ui.roomSelect);
       updateReservationHistory(ui.historyBox);
-      showSummary(ui.summaryBox, result.summary, true);
-      showSuccess(ui.successAlert, "Reserva confirmada. C\u00f3digo: " + result.reservation.id);
-
-      ui.reservationForm.reset();
-      ui.reservationForm.classList.remove("was-validated");
       updateReservationSummary(ui);
-    });
 
-    if (ui.historyBox) {
-      ui.historyBox.addEventListener("click", (event) => {
-        const button = event.target.closest('[data-action="remove-reservation"]');
-        if (!button) return;
-        const id = button.getAttribute("data-id");
-        state.reservations = state.reservations.filter((item) => item.id !== id);
+      [ui.roomSelect, ui.checkInInput, ui.checkOutInput, ui.guestsInput, ui.extrasSelect].forEach((field) => {
+        if (!field) return;
+        field.addEventListener("input", () => updateReservationSummary(ui));
+        field.addEventListener("change", () => updateReservationSummary(ui));
+      });
+
+      ui.reservationForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        ui.reservationForm.classList.add("was-validated");
+
+        const result = buildReservationPayload(ui);
+        if (!result.valid) {
+          if (result.message) {
+            showSummary(ui.summaryBox, result.message, false);
+          }
+          return;
+        }
+
+        state.reservations.unshift(result.reservation);
         saveReservations();
         updateReservationHistory(ui.historyBox);
+        showSummary(ui.summaryBox, result.summary, true);
+        showSuccess(ui.successAlert, "Reserva confirmada. C\\u00f3digo: " + result.reservation.id);
+
+        ui.reservationForm.reset();
+        ui.reservationForm.classList.remove("was-validated");
+        updateReservationSummary(ui);
       });
+
+      if (ui.historyBox) {
+        ui.historyBox.addEventListener("click", (event) => {
+          const button = event.target.closest('[data-action="remove-reservation"]');
+          if (!button) return;
+          const id = button.getAttribute("data-id");
+          state.reservations = state.reservations.filter((item) => item.id !== id);
+          saveReservations();
+          updateReservationHistory(ui.historyBox);
+        });
+      }
+    }
+
+    if (hasTours) {
+      renderCollection(DATA.tours, ui.tourContainer, "tours");
+    }
+
+    if (hasSouvenirs) {
+      renderCollection(DATA.souvenirs, ui.souvenirContainer, "souvenirs");
+    }
+
+    if (hasCart) {
+      updateCartUI(ui);
     }
 
     document.addEventListener("click", (event) => {

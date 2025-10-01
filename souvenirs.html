@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Souvenirs | Caporo Caba&ntilde;a</title>
+  <meta name="description" content="Souvenirs y detalles exclusivos de Caporo Caba&ntilde;a en Capurgan&aacute;" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="bg-white">
+  <nav class="navbar navbar-expand-lg bg-white sticky-top border-bottom">
+    <div class="container py-2">
+      <a class="navbar-brand" href="index.html">Caporo Caba&ntilde;a</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Abrir men&uacute;">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="alojamiento.html">Alojamiento</a></li>
+          <li class="nav-item"><a class="nav-link" href="experiencias.html">Experiencias</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="souvenirs.html">Souvenirs</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+        <div class="d-flex ms-lg-3 gap-2">
+          <a href="alojamiento.html#reservas" class="btn btn-primary">Reservar</a>
+          <button type="button" class="btn btn-outline-primary position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <i class="bi bi-bag"></i><span class="ms-2 d-none d-lg-inline">Carrito</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary" id="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="content container">
+      <h1 class="mb-3">Recuerdos de Caporo</h1>
+      <p class="lead mb-4">Elige piezas artesanales y detalles para llevar un poco del Caribe contigo.</p>
+      <div class="d-flex gap-2 justify-content-center">
+        <a href="#souvenirs" class="btn btn-primary btn-lg"><i class="bi bi-gift me-2"></i>Ver cat&aacute;logo</a>
+        <a href="experiencias.html#tours" class="btn btn-outline-light btn-lg"><i class="bi bi-compass me-2"></i>Descubrir tours</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="souvenirs" class="py-5 bg-white">
+      <div class="container">
+        <h3 class="section-title mb-3">Souvenirs y detalles</h3>
+        <p class="section-sub">Lleva un recuerdo de Caporo sin salir de la web.</p>
+        <div class="row g-4" id="souvenir-list"></div>
+      </div>
+    </section>
+
+    <section class="py-5 bg-light">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <img class="w-100 rounded-2xl shadow" src="img/Seccion2_Descripcion/Cabania.jpg" alt="Caba&ntilde;a frente al mar">
+          </div>
+          <div class="col-lg-6">
+            <h3 class="section-title">Compra f&aacute;cil y segura</h3>
+            <p class="section-sub">Nuestros souvenirs est&aacute;n elaborados por artesanos locales y puedes combinarlos con tus reservas o tours favoritos. Agrega al carrito, simula tu compra y coordina la entrega con nuestro equipo.</p>
+            <ul class="list-unstyled text-muted small mt-3">
+              <li class="mb-2"><i class="bi bi-check-circle me-2 text-primary"></i>Art&iacute;culos exclusivos disponibles solo en Caporo.</li>
+              <li class="mb-2"><i class="bi bi-check-circle me-2 text-primary"></i>Pagos y env&iacute;os coordinados por WhatsApp.</li>
+              <li><i class="bi bi-check-circle me-2 text-primary"></i>Combina productos con tus tours o reservas.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer py-4">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+      <div>Todos los derechos reservados &copy;</div>
+      <div class="small">Hecho con amor desde mi casa</div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrito de compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div id="cart-alert" class="alert alert-info d-none" role="alert">Tu carrito est&aacute; vac&iacute;o. Agrega tours o souvenirs para continuar.</div>
+          <div id="cart-success" class="alert alert-success d-none" role="alert"></div>
+          <div id="cart-items" class="list-group mb-3"></div>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-semibold">Total simulado</span>
+            <span id="cart-total" class="fs-5 fw-bold">$0</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="checkoutButton" disabled>Simular pago</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/app.js"></script>
+</body>
+</html>
