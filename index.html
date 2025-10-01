@@ -24,14 +24,23 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="nav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="#planes">Planes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#reservas">Reservas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#tours">Tours</a></li>
+          <li class="nav-item"><a class="nav-link" href="#souvenirs">Souvenirs</a></li>
           <li class="nav-item"><a class="nav-link" href="#eventos">Eventos</a></li>
-          <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galer&#237;a</a></li>
           <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
         </ul>
-        <a href="#reservas" class="btn btn-primary ms-lg-3">Reservar</a>
+        <div class="d-flex ms-lg-3 gap-2">
+          <a href="#reservas" class="btn btn-primary">Reservar</a>
+          <button type="button" class="btn btn-outline-primary position-relative" data-bs-toggle="modal" data-bs-target="#cartModal">
+            <i class="bi bi-bag"></i><span class="ms-2 d-none d-lg-inline">Carrito</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary" id="cart-count">0</span>
+          </button>
+        </div>
       </div>
     </div>
   </nav>
@@ -153,16 +162,86 @@
 
   <!-- CTA RESERVA -->
   <section id="reservas" class="py-5 bg-light">
-    <div class="container text-center">
-      <h2 class="section-title mb-3">Reserva Ahora</h2>
-      <p class="section-sub mx-auto">¡Tu paraíso tropical te espera! Reserva tu estancia y vive la magia del Caribe.</p>
-      <div class="d-flex justify-content-center gap-3 mt-3">
-        <a class="btn btn-primary btn-lg" href="#contacto"><i class="bi bi-door-open me-2"></i>Ver Habitaciones</a>
-        <a class="btn btn-outline-dark btn-lg" href="#eventos"><i class="bi bi-compass me-2"></i>Ver Tours</a>
+    <div class="container">
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-6">
+          <h2 class="section-title mb-3">Reserva tu estad&#237;a</h2>
+          <p class="section-sub">Selecciona las fechas y el tipo de habitaci&#243;n para generar una confirmaci&#243;n inmediata.</p>
+          <ul class="list-unstyled text-muted small">
+            <li class="mb-2"><i class="bi bi-check-circle me-2 text-primary"></i>Datos almacenados de forma local (simulaci&#243;n).</li>
+            <li class="mb-2"><i class="bi bi-check-circle me-2 text-primary"></i>Confirmaci&#243;n autom&#225;tica con c&#243;digo de reserva.</li>
+            <li><i class="bi bi-check-circle me-2 text-primary"></i>Actualiza o elimina reservas desde el historial.</li>
+          </ul>
+          <div class="mt-4">
+            <h6 class="fw-semibold">Reservas recientes</h6>
+            <div class="bg-white border rounded-3 p-3 small" id="reservation-history">A&#250;n no hay reservas.</div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="bg-white rounded-3 shadow p-4">
+            <form id="reservation-form" class="row g-3" novalidate>
+              <div class="col-12">
+                <label class="form-label" for="roomType">Tipo de habitaci&#243;n</label>
+                <select id="roomType" class="form-select" required></select>
+                <div class="invalid-feedback">Por favor selecciona una opci&#243;n.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="checkIn">Fecha de ingreso</label>
+                <input type="date" id="checkIn" class="form-control" required>
+                <div class="invalid-feedback">Ingresa la fecha de ingreso.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="checkOut">Fecha de salida</label>
+                <input type="date" id="checkOut" class="form-control" required>
+                <div class="invalid-feedback">Ingresa la fecha de salida.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="guests">Huespedes</label>
+                <input type="number" id="guests" class="form-control" min="1" max="6" value="2" required>
+                <div class="invalid-feedback">Indica el n&#250;mero de huespedes.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="extras">Extras</label>
+                <select id="extras" class="form-select">
+                  <option value="none" selected>Sin extras</option>
+                  <option value="airport">Transporte aeropuerto</option>
+                  <option value="spa">Acceso spa</option>
+                  <option value="breakfast">Desayuno premium</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <div id="reservation-summary" class="bg-light rounded-3 border p-3 d-none"></div>
+              </div>
+              <div class="col-12 d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Confirmar reserva simulada</button>
+              </div>
+              <div class="col-12">
+                <div id="reservation-success" class="alert alert-success d-none mb-0" role="alert"></div>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- TOURS -->
+  <section id="tours" class="py-5 bg-white">
+    <div class="container">
+      <h3 class="section-title mb-3">Tours y experiencias</h3>
+      <p class="section-sub">Agrega actividades inolvidables a tu paquete de viaje.</p>
+      <div class="row g-4" id="tour-list"></div>
+    </div>
+  </section>
+
+  <!-- SOUVENIRS -->
+  <section id="souvenirs" class="py-5 bg-light">
+    <div class="container">
+      <h3 class="section-title mb-3">Souvenirs y detalles</h3>
+      <p class="section-sub">Lleva un recuerdo de Caporo sin salir de la web.</p>
+      <div class="row g-4" id="souvenir-list"></div>
+    </div>
+  </section>
   <!-- EVENTOS -->
   <section id="eventos" class="py-5 bg-white">
     <div class="container">
@@ -379,7 +458,33 @@
     </div>
   </footer>
 
+  <!-- Modals -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrito de compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <div id="cart-alert" class="alert alert-info d-none" role="alert">Tu carrito est&#225; vac&#237;o. Agrega tours o souvenirs para continuar.</div>
+          <div id="cart-success" class="alert alert-success d-none" role="alert"></div>
+          <div id="cart-items" class="list-group mb-3"></div>
+          <div class="d-flex justify-content-between align-items-center">
+            <span class="fw-semibold">Total simulado</span>
+            <span id="cart-total" class="fs-5 fw-bold">$0</span>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" id="checkoutButton" disabled>Simular pago</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="scripts/app.js"></script>
 </body>
 </html>
