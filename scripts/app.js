@@ -1,5 +1,6 @@
 (function () {
   const STORAGE_KEY = "caporo-reservations";
+  const CART_STORAGE_KEY = "caporo-cart";
   const MS_PER_DAY = 1000 * 60 * 60 * 24;
 
   const DATA = {
@@ -92,7 +93,7 @@
   };
 
   const state = {
-    cart: [],
+    cart: loadCart(),
     reservations: loadReservations()
   };
 
@@ -221,6 +222,7 @@
           ui.cartSuccess.classList.remove("d-none");
         }
         state.cart = [];
+        saveCart();
         updateCartUI(ui);
         if (ui.cartSuccess) {
           setTimeout(() => {
@@ -335,6 +337,8 @@
       });
     }
 
+    saveCart();
+
     if (ui.cartSuccess) {
       ui.cartSuccess.classList.add("d-none");
       ui.cartSuccess.textContent = "";
@@ -350,12 +354,14 @@
     if (item.quantity <= 0) {
       removeFromCart(collection, id, ui);
     } else {
+      saveCart();
       updateCartUI(ui);
     }
   }
 
   function removeFromCart(collection, id, ui) {
     state.cart = state.cart.filter((entry) => !(entry.id === id && entry.collection === collection));
+    saveCart();
     updateCartUI(ui);
   }
 
@@ -512,6 +518,34 @@
 
   function formatDate(date) {
     return date.toISOString().slice(0, 10);
+  }
+
+  function loadCart() {
+    try {
+      const raw = localStorage.getItem(CART_STORAGE_KEY);
+      if (!raw) return [];
+      const parsed = JSON.parse(raw);
+      if (!Array.isArray(parsed)) return [];
+      return parsed.filter((item) => item && typeof item === "object" && Number.isFinite(item.quantity) && item.quantity > 0).map((item) => ({
+        id: item.id,
+        collection: item.collection,
+        name: item.name,
+        price: item.price,
+        meta: item.meta || "",
+        quantity: item.quantity
+      }));
+    } catch (error) {
+      console.error("No se pudo cargar el carrito simulado", error);
+      return [];
+    }
+  }
+
+  function saveCart() {
+    try {
+      localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(state.cart));
+    } catch (error) {
+      console.error("No se pudo guardar el carrito simulado", error);
+    }
   }
 
   function loadReservations() {
